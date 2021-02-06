@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  generate-date:
+  date-generate:
     build: date-generate
     container_name: generate-date
     volumes:
@@ -10,7 +10,7 @@ services:
     image: nginx:1.19-alpine
     container_name: web1-compose
     depends_on:
-      - generate-date
+      - date-generate
     ports:
       - 8080:80
     volumes:
